@@ -1,4 +1,5 @@
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+
 import App from "./App";
 import axios from "axios";
 
@@ -8,6 +9,7 @@ console.log(promise);
 promise.then((response) => {
     console.log(response);
 });
+
 const notes = [
     {
         id: 1,
@@ -29,4 +31,6 @@ const notes = [
     },
 ];
 
-ReactDOM.render(<App notes={notes} />, document.getElementById("root"));
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <App notes={notes} />
+);
